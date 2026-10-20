@@ -1,0 +1,28 @@
+# 仅运行时启动 Python，不常驻，不安装浏览器或第三方依赖。
+[Unit]
+Description=linux.sb lightweight daily task
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=linuxsb
+Group=linuxsb
+WorkingDirectory=/var/lib/linux-sb-checkin
+Environment=PYTHONUTF8=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 /opt/linux-sb-checkin/checkin.py
+StateDirectory=linux-sb-checkin
+StateDirectoryMode=0700
+UMask=0077
+TimeoutStartSec=120
+MemoryMax=96M
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=linux-sb-checkin

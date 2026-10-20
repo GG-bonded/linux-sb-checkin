@@ -1,0 +1,6 @@
+# Linux 部署文件统一为 LF；源文件内容采用 UTF-8。
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.service text eol=lf
+*.timer text eol=lf

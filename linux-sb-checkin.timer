@@ -1,0 +1,14 @@
+# 显式使用北京时间，不修改 VPS 的全局时区。
+[Unit]
+Description=Run linux.sb task daily at 09:00 Asia/Shanghai
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Asia/Shanghai
+AccuracySec=1s
+RandomizedDelaySec=0
+# 错过时间后在恢复时补一次；首次启用也可能触发补执行。
+Persistent=true
+Unit=linux-sb-checkin.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,32 @@
+# 登录凭证和本地运行数据绝不发布。
+cookies*.txt
+*cookie*.json
+storage_state*.json
+*.har
+progress*.json
+run.lock
+data/
+state/
+.env
+.env.*
+.ssh/
+*.pem
+*.key
+
+# 运行输出、备份和 Python 缓存不属于源码。
+*.log
+*.tmp
+*.bak
+*.bak.*
+backup.*/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# 编辑器和操作系统元数据。
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
